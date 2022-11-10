@@ -1,7 +1,7 @@
 {
-	"name": "files-community",
+	"name": "mstrow-site",
 	"version": "0.0.1",
-	"repository": "https://github.com/files-community/files",
+	"repository": "https://github.com/mstrow/mstrow-site",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -13,33 +13,35 @@
 	},
 	"devDependencies": {
 		"@fec/remark-a11y-emoji": "^3.1.0",
-		"@fluentui/svg-icons": "^1.1.179",
-		"@neodrag/svelte": "^1.2.3",
-		"@sveltejs/adapter-vercel": "next",
-		"@sveltejs/kit": "next",
-		"@typescript-eslint/eslint-plugin": "^5.35.1",
-		"@typescript-eslint/parser": "^5.35.1",
-		"autoprefixer": "^10.4.8",
+		"@fluentui/svg-icons": "^1.1.184",
+		"@neodrag/svelte": "^1.2.4",
+		"@sveltejs/kit": "1.0.0-next.514",
+		"@typescript-eslint/eslint-plugin": "^5.40.0",
+		"@typescript-eslint/parser": "^5.40.0",
+		"autoprefixer": "^10.4.12",
 		"cssnano": "^5.1.13",
-		"eslint": "^8.22.0",
+		"eslint": "^8.25.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^3.4.1",
 		"fluent-svelte": "^1.6.0",
 		"mdsvex": "^0.10.6",
-		"postcss": "^8.4.16",
+		"postcss": "^8.4.17",
 		"postcss-media-minmax": "^5.0.0",
 		"prettier": "^2.7.1",
-		"prettier-plugin-svelte": "^2.7.0",
+		"prettier-plugin-svelte": "^2.8.0",
 		"remark-gfm": "^3.0.1",
 		"remark-github": "^11.2.4",
 		"remark-slug": "^7.0.1",
-		"sass": "^1.54.5",
-		"svelte": "^3.49.0",
-		"svelte-check": "^2.8.1",
+		"sass": "^1.55.0",
+		"svelte": "^3.51.0",
+		"svelte-check": "^2.9.2",
 		"svelte-preprocess": "^4.10.7",
 		"tslib": "^2.4.0",
-		"typescript": "^4.8.2",
-		"vite": "^3.0.9"
+		"typescript": "^4.8.4",
+		"vite": "^3.1.7"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@sveltejs/adapter-node": "1.0.0-next.100"
+	}
 }

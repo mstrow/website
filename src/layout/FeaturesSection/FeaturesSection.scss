@@ -3,13 +3,34 @@
 // Outer section
 :global {
 	#features-section {
-		background-color: var(--fds-solid-background-base);
+		inset-block-start: 0;
+		inset-inline-start: 0;
+		animation: rotate-background 10s infinite ease-in-out;
 
+		background-color: hsl(242, 23%, 78%);
+		background-image: radial-gradient(at 68% 34%, hsla(233, 72%, 73%, 1) 0, transparent 33%),
+		radial-gradient(at 51% 0%, hsla(244, 79%, 75%, 1) 0, transparent 37%),
+		radial-gradient(at 80% 2%, hsla(264, 88%, 72%, 1) 0, transparent 3%),
+		radial-gradient(at 96% 100%, hsla(244, 89%, 65%, 1) 0, transparent 47%),
+		radial-gradient(at 1% 84%, hsla(223, 72%, 73%, 1) 0, transparent 31%),
+		radial-gradient(at 19% 100%, hsla(252, 73%, 70%, 1) 0, transparent 34%),
+		radial-gradient(at 46% 100%, hsla(244, 79%, 75%, 1) 0, transparent 39%),
+		radial-gradient(at 92% 72%, hsla(272, 24%, 79%, 1) 0, transparent 33%);
+		background-size: 150% 150%;
+		--fds-solid-background-base: hsl(0, 0%, 95%);
+		--fds-text-primary: hsl(0, 0%, 13%);
+		--fds-text-secondary: hsl(0, 0%, 16%);
+		--fds-text-tertiary: var(--fds-text-secondary);
+		--fds-subtle-fill-secondary: hsl(0, 0%, 0%, 0.095);
+		--fds-subtle-fill-tertiary: hsl(0, 0%, 0%, 0.024);
+		--fds-subtle-fill-disabled: transparent;
+		--fds-accent-text-primary: hsl(var(--fds-accent-dark-3));
+		--fds-accent-text-tertiary: hsl(var(--fds-accent-dark-2));
 		// Inner section
 		.page-section-inner {
 			display: grid;
-			grid-template-columns: calc(50% - 24px) calc(50% - 24px);
-			grid-gap: 48px;
+			grid-template-columns: calc(65% - 24px) calc(35% - 24px);
+			grid-gap: 25px;
 		}
 	}
 
@@ -38,21 +59,32 @@
 }
 
 // Features section small device support
-@media screen and (width < 924px) {
+@media screen and (width < 1250px) {
 	:global(#features-section .page-section-inner) {
 		grid-template-columns: auto;
 	}
 
-	.features-section- {
-		// Hide showcases on mobile
-		&left {
-			display: none;
-		}
-	}
+	// .features-section- {
+	// 	// Hide showcases on mobile
+	// 	&left {
+	// 		display: none;
+	// 	}
+	// }
 
 	// HACK: Remove selected card styling on mobile
 	// Figured this was both easier and faster than dealing with bind:innerWidth
 	.feature-cards-container :global(.feature-card.selected) {
 		border-color: transparent;
+	}
+}
+@keyframes rotate-background {
+	from {
+		background-position: 0 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	to {
+		background-position: 0 50%;
 	}
 }

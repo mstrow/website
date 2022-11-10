@@ -1,18 +1,15 @@
 <script lang="ts">
-	import { CommunitySection, DesignSection, FeaturesSection, HeroSection, ThemesSection } from "$layout";
+	import {DesignSection, FeaturesSection, HeroSection } from "$layout";
 	import { Metadata } from "$lib";
 </script>
 
 <svelte:head>
-	<Metadata title="Files • Home" />
+	<Metadata title="mstrow.dev • Portfolio" />
 </svelte:head>
 
 <HeroSection />
 
-<DesignSection />
 
 <FeaturesSection />
 
-<ThemesSection />
-
-<CommunitySection />
+<DesignSection />

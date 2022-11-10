@@ -2,43 +2,42 @@
 	import { onMount } from "svelte";
 
 	import { FeatureCard, HeaderChip, PageSection } from "$lib";
-	import { featureCards } from "$data/features";
 
 	import FeatureShowcase from "./FeatureShowcase.svelte";
-	import { dev } from "$app/env";
+	import { dev } from "$app/environment";
+	import PreviewShowcase from "./preview/PreviewShowcase.svelte";
 
 	let currentFeature = 0;
 
 	let cardPaginationInterval = 16;
 
-	onMount(() => {
-		if (!dev) {
-			// Iterate through feature cards every n seconds
-			setInterval(
-				() => {
-					currentFeature += currentFeature !== 3 ? 1 : -currentFeature;
-					cardPaginationInterval = 16;
-				},
-				cardPaginationInterval * 1000
-			);
-		}
-	});
+	// onMount(() => {
+	// 	if (!dev) {
+	// 		// Iterate through feature cards every n seconds
+	// 		setInterval(
+	// 			() => {
+	// 				//currentFeature += currentFeature !== 3 ? 1 : -currentFeature;
+	// 				cardPaginationInterval = 16;
+	// 			},
+	// 			cardPaginationInterval * 1000
+	// 		);
+	// 	}
+	// });
 </script>
 
 <PageSection id="features-section">
 	<div class="features-section-left">
-		<FeatureShowcase feature={currentFeature} />
+		<PreviewShowcase/>
 	</div>
 	<div class="features-section-right">
-		<HeaderChip>Features</HeaderChip>
-		<h2>It already does that.</h2>
+		<HeaderChip>Skills</HeaderChip>
+		<h2>My experience and confidence</h2>
 		<p>
-			Cloud files integration? Tabs and multiple layouts? Rich file previews?
-			Files has it covered with robust features you expect from a modern file
-			manager.
+			I like using a wide-range of technologies and tools to solve problems.
+			Here's a sample of the ones I like the most and have the most experience with.
 		</p>
 		<hr>
-		<div class="feature-cards-container">
+		<!-- <div class="feature-cards-container">
 			{#each featureCards as feature, i}
 				<FeatureCard
 					on:click={() => {
@@ -53,7 +52,7 @@
 					{feature.title}
 				</FeatureCard>
 			{/each}
-		</div>
+		</div> -->
 	</div>
 </PageSection>
 

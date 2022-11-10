@@ -9,45 +9,21 @@
 <svelte:window on:scroll={() => window.requestAnimationFrame(() => scrollY = window.scrollY )} />
 
 <PageSection id="design-section">
-	<HeaderChip>Design</HeaderChip>
-	<h2>Power meets beauty.</h2>
+	<HeaderChip>Development</HeaderChip>
+	<h2>I like cutting edge tech.</h2>
 	<p>
-		Explore a beautiful Windows-first design. Manage all your files with
-		increased productivity. Work across multiple folders with tabs. And so much
-		more.
+		Such as toying with the new unpackaged UI framework from Microsoft, WinUI 3.0.
+		I made a simple library management app to show off the new controls, and to learn how to use them.
 	</p>
-	<div class="buttons-spacer">
-		<Button
-			href="https://microsoft.com/store/apps/{links.storeId}"
-			{...externalLink}
-			variant="accent"
-		>
-			Try it out
-		</Button>
-		<Button variant="hyperlink"
-		        href="https://www.microsoft.com/design/fluent/"
-		        {...externalLink}
-		>
-			Design System
-		</Button>
-	</div>
 	<div class="design-image">
 		<picture>
-			<source
-				media="(prefers-color-scheme: dark)"
-				srcset="/screenshots/folder-list-dark.png"
-			>
-			<source
-				media="(prefers-color-scheme: light)"
-				srcset="/screenshots/folder-list-light.png"
-			>
 			<img
-				alt="Files folder list screenshot"
+				alt="Library manager screenshot"
 				class="files-screenshot"
-				height="768"
-				src="/screenshots/folder-list-light.png"
+				height="918"
+				src="/screenshots/libraryman.png"
 				style:transform="translateY({Math.floor(scrollY / -10)}px)"
-				width="1024"
+				width="1193"
 			>
 		</picture>
 		<picture>

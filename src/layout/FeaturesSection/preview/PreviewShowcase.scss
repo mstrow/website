@@ -7,9 +7,11 @@
 	// Preview pane sidebar
 	.preview-pane {
 		@include flex($direction: column);
-		inline-size: 260px;
-		block-size: 390px;
-		border-radius: var(--fds-overlay-corner-radius) 0 0 var(--fds-overlay-corner-radius);
+		inline-size: 810px;
+		block-size: 490px;
+		backdrop-filter: blur(60px) saturate(150%);
+		background-color: hsl(var(--mica-tint), calc(var(--mica-tint-opacity)));
+		border-radius: var(--fds-overlay-corner-radius);
 		animation: 400ms cubic-bezier(0.1, 0.9, 0.2, 1) preview-pane-open backwards 800ms;
 
 		// Inner preview pane elements
@@ -24,7 +26,7 @@
 		.preview {
 			@include flex($align: center);
 			flex: 0 0 auto;
-			block-size: 144px;
+			block-size: 120px;
 		}
 
 		// Rich preview elements
@@ -40,10 +42,7 @@
 			user-select: none;
 			-webkit-user-drag: none;
 			object-fit: contain;
-		}
-
-		iframe {
-			border-radius: var(--fds-control-corner-radius);
+			filter: drop-shadow(0px 0px 8px rgba(0,0,0,0.1));
 		}
 
 		:global {
@@ -58,26 +57,6 @@
 			}
 		}
 
-		// Grabber
-		// Used for scaling up the preview size
-		.grabber {
-			@include flex($align: center, $justify: center);
-			flex: 0 0 auto;
-			inline-size: 100%;
-			block-size: 20px;
-			cursor: n-resize;
-
-			// Inner grabber
-			&::before {
-				content: "";
-				position: absolute;
-				inline-size: 28px;
-				block-size: 4px;
-				border-radius: var(--fds-control-corner-radius);
-				background: var(--fds-subtle-fill-secondary);
-			}
-		}
-
 		// File metadata
 		// Displays information relating to the relevant file
 		.metadata {
@@ -89,12 +68,78 @@
 			line-height: normal;
 			word-break: break-word;
 			user-select: text;
+
+			.meter {
+				box-sizing: content-box;
+				height: 10px; /* Can be anything */
+				position: relative;
+				margin: 0 0 10px 0; /* Just for demo spacing */
+				border-radius: 25px;
+				padding: 2px;
+				border: 1px solid var(--fds-surface-stroke-default);
+			  }
+			  .meter > span {
+				display: block;
+				height: 100%;
+				border-top-right-radius: 8px;
+				border-bottom-right-radius: 8px;
+				border-top-left-radius: 20px;
+				border-bottom-left-radius: 20px;
+				background-color: rgb(43, 194, 83);
+				background-image: linear-gradient(
+				  center bottom,
+				  rgb(43, 194, 83) 37%,
+				  rgb(84, 240, 84) 69%
+				);
+				box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3),
+				  inset 0 -2px 6px rgba(0, 0, 0, 0.4);
+				position: relative;
+				overflow: hidden;
+			  }
+			  .animate > span > span {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				background-image: linear-gradient(
+				  -45deg,
+				  rgba(255, 255, 255, 0.2) 25%,
+				  transparent 25%,
+				  transparent 50%,
+				  rgba(255, 255, 255, 0.2) 50%,
+				  rgba(255, 255, 255, 0.2) 75%,
+				  transparent 75%,
+				  transparent
+				);
+				z-index: 1;
+				background-size: 50px 50px;
+				animation: move 2s linear infinite;
+				border-top-right-radius: 8px;
+				border-bottom-right-radius: 8px;
+				border-top-left-radius: 20px;
+				border-bottom-left-radius: 20px;
+				overflow: hidden;
+			  }
+			  
+			  .animate > span:after {
+				display: none;
+			  }
+			  .orange > span {
+				background-image: linear-gradient(#f1a165, #f36d0a);
+			  }
+			  
+			  .red > span {
+				background-image: linear-gradient(#f0a3a3, #f42323);
+			  }
 		}
 
 		// Metadata elements
 		h4,
 		h5,
 		h6 {
+			text-align: center;
 			color: var(--fds-text-primary);
 		}
 
@@ -140,8 +185,13 @@
 		position: relative;
 		z-index: 1;
 		display: grid;
+		block-size: 560px;
+		overflow: hidden;
+		overflow-y: scroll;
 		grid-gap: 4px;
 		padding: 12px;
+		background-color: hsl(var(--mica-tint), calc(var(--mica-tint-opacity)));
+		backdrop-filter: blur(60px) saturate(150%);
 		animation: feature-panel 500ms cubic-bezier(0.165, 0.84, 0.44, 1) backwards 400ms;
 
 		// File entries
@@ -174,6 +224,7 @@
 			img {
 				inline-size: 88%;
 				block-size: auto;
+				filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.1));
 			}
 		}
 	}
@@ -183,6 +234,41 @@
 @keyframes preview-pane-open {
 	from {
 		opacity: 0;
-		transform: translateX(80%);
+		transform: translateX(25%);
 	}
+}
+
+@keyframes move {
+	0% {
+	  background-position: 0 0;
+	}
+	100% {
+	  background-position: 50px 50px;
+	}
+  }
+
+@media screen and (width < 1480px) {
+	.previewer-showcase {
+		.preview-pane{
+			inline-size: 630px;
+		}
+	}
+
+}
+
+@media screen and (width < 935px) {
+	.previewer-showcase {
+		.preview-pane{
+			inline-size: 560px;
+		}
+	}
+
+}
+@media screen and (width < 750px) {
+	.previewer-showcase {
+		.preview-pane{
+			inline-size: 400px;
+		}
+	}
+
 }

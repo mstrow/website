@@ -1,4 +1,4 @@
-import adapter from "@sveltejs/adapter-vercel";
+
 import sveltePreprocess from "svelte-preprocess";
 import { mdsvex } from "mdsvex";
 import remarkGfm from "remark-gfm";
@@ -8,6 +8,7 @@ import remarkGithub from "remark-github";
 import autoprefixer from "autoprefixer";
 import cssnano from "cssnano";
 import mediaMinMax from "postcss-media-minmax";
+import adapter from '@sveltejs/adapter-node';
 
 /** @type {import("@sveltejs/kit").Config} */
 const config = {
@@ -17,10 +18,7 @@ const config = {
 			$data: "src/data",
 			$layout: "src/layout"
 		},
-		prerender: {
-			default: true
-		},
-		adapter: adapter({ edge: true })
+		adapter: adapter({ out: 'build' })
 	},
 	preprocess: [
 		mdsvex({
