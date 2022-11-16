@@ -1,4 +1,4 @@
-import { docs, type DocsCategory, type DocsPage } from "$data/docs";
+import { projects, type DocsCategory, type DocsPage } from "$data/projects";
 import type { LayoutLoad } from "./$types";
 
 function* flatten<T>(array: T[], depth = Infinity): Generator<T> {
@@ -18,11 +18,11 @@ export const findPages = (docsStructure: (DocsPage | DocsCategory)[]) => {
 };
 
 export const load: LayoutLoad = ({ url }) => {
-	const docsPages = findPages(docs);
+	const docsPages = findPages(projects);
 
 	return {
 		pagePath: url.pathname,
-		currentPage: docsPages.find(p => `/docs${ p.path }` === url.pathname),
+		currentPage: docsPages.find(p => `/projects${ p.path }` === url.pathname),
 		docsPages
 	};
 };

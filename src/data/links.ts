@@ -1,4 +1,4 @@
-import type { DocsPage } from "$data/docs";
+import type { DocsPage } from "$data/projects";
 
 export const links = {
 	github: {

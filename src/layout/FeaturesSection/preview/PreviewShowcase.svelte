@@ -1,6 +1,8 @@
 <script>
 	import { draw } from "svelte/transition";
 	import { previewFiles } from "$data/features";
+	import { projects } from "$data/projects";
+	import { each } from "svelte/internal";
 
 	let currentPreviewFile = 0;
 </script>
@@ -48,6 +50,22 @@
 					<h5>
 						{file.confidence}
 					</h5>
+					{#if file?.projects !== undefined}
+						<br/>
+						<hr/>
+						<h4>Projects</h4>
+						<div class="listcontainer">
+							<ul>
+								{#each file.projects as project}
+									<li>
+										<a href="/projects{project.link}">
+											{project.name}
+										</a>
+									</li>
+								{/each}
+							</ul>
+						</div>
+					{/if}
 					<br/>
 					<hr/>
 					<span>{file.description}</span>

@@ -4,8 +4,8 @@
 	import { links } from "$data/links";
 	import { onMount } from "svelte";
 	import ArrowDownload from "@fluentui/svg-icons/icons/arrow_download_24_regular.svg?raw";
-	import ChevronDown from "@fluentui/svg-icons/icons/chevron_down_24_regular.svg?raw";
 	import Code from "@fluentui/svg-icons/icons/code_24_regular.svg?raw";
+	import AppGeneric from "@fluentui/svg-icons/icons/app_generic_24_regular.svg?raw";
 	
 
 </script>
@@ -27,7 +27,16 @@
 				</div>
 			</Button> -->
 			<Button
+				href="/projects"
 				variant="accent"
+			>
+				{@html AppGeneric}
+				<div class="hero-button-inner">
+					<h5>View projects</h5>
+					<span>Degree and personal</span>
+				</div>
+			</Button>
+			<Button
 				href="https://github.com/{links.github.owner}/"
 				{...externalLink}
 			>

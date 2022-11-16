@@ -5,7 +5,7 @@
 	import { page } from "$app/stores";
 
 	import { links } from "$data/links";
-	import { docs } from "$data/docs";
+	import { projects } from "$data/projects";
 	import { externalLink, Metadata, TreeView } from "$lib";
 	import { Button, ListItem, TextBox } from "fluent-svelte";
 
@@ -42,9 +42,9 @@
 		if (key === "Enter") {
 			if (
 				searchResults.length > 0 &&
-				$page.url.pathname !== `/docs${ searchResults[selection].path }`
+				$page.url.pathname !== `/projects${ searchResults[selection].path }`
 			)
-				goto(`/docs${ searchResults[selection].path }`, {
+				goto(`/projects${ searchResults[selection].path }`, {
 					keepfocus: true
 				});
 		} else if (key === "ArrowDown") {
@@ -74,7 +74,7 @@
 </script>
 
 <svelte:head>
-	<Metadata title="Files • {pageTitle ? `Projects - ${pageTitle}` : 'Projects'}"
+	<Metadata title="Files • {pageTitle ? `Docs - ${pageTitle}` : 'Docs'}"
 	          image="docs"
 	/>
 </svelte:head>
@@ -96,7 +96,7 @@
 					on:search={() => {
 						if (
 							searchResults.length > 0 &&
-							$page.url.pathname !== `/docs${searchResults[selection].path}`
+							$page.url.pathname !== `/projects${searchResults[selection].path}`
 						)
 							goto(`/docs${searchResults[selection].path}`, {
 								keepfocus: true
@@ -109,7 +109,7 @@
 					<div class="autosuggest-flyout scroller">
 						{#if searchResults.length > 0}
 							{#each searchResults as { name, path }, i}
-								<ListItem selected={selection === i} href="/docs{path}">
+								<ListItem selected={selection === i} href="/projects{path}">
 									{name}
 								</ListItem>
 							{/each}
@@ -121,7 +121,7 @@
 			</div>
 			<hr role="separator">
 		</div>
-		<TreeView tree={docs} />
+		<TreeView tree={projects} />
 	</aside>
 	<article class="page scroller">
 		<div class="search-mobile">
@@ -171,16 +171,15 @@
 						{$page.url.pathname.split("/").join(" / ").substring(2)}
 						{$page.url.pathname === "/projects" ? " / overview" : ""}
 					</span>
-					<!-- <div class="header-right">
+					<div class="header-right">
 						<Button variant="hyperlink"
-						        href="https://github.com/{links.github.owner}/{links.github
-								.siteRepo}/edit/main/src/routes/docs{currentPage.path ||
+						        href="https://github.com/{links.github.owner}/edit/main/src/routes/docs{currentPage.path ||
 								'/index'}.md"
 						        {...externalLink}
 						>
 							Edit this page
 						</Button>
-					</div> -->
+					</div>
 				</header>
 				<slot />
 			</div>

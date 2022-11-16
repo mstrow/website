@@ -31,7 +31,7 @@
 	</div>
 	<div class="features-section-right">
 		<HeaderChip>Skills</HeaderChip>
-		<h2>My experience and confidence</h2>
+		<h2>My experience and interests</h2>
 		<p>
 			I like using a wide-range of technologies and tools to solve problems.
 			Here's a sample of the ones I like the most and have the most experience with.

@@ -8,7 +8,7 @@
 
 	import { ListItem } from "fluent-svelte";
 	import { getCSSDuration } from "fluent-svelte/internal";
-	import type { DocsCategory, DocsPage } from "$data/docs";
+	import type { DocsCategory, DocsPage } from "$data/projects";
 
 	export let tree: (DocsPage | DocsCategory)[] = [];
 	export let initial = true;
@@ -60,8 +60,8 @@
 		{:else}
 			<ListItem
 				on:click
-				selected={`/docs${path}` === $page.url.pathname}
-				href="/docs{path}"
+				selected={`/projects${path}` === $page.url.pathname}
+				href="/projects{path}"
 			>
 				<svelte:fragment slot="icon">
 					{@html icon || ""}

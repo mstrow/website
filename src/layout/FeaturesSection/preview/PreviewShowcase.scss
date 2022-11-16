@@ -134,7 +134,14 @@
 				background-image: linear-gradient(#f0a3a3, #f42323);
 			  }
 		}
-
+		div.listcontainer {
+			text-align: center;
+			ul {
+				display: inline-block;
+				text-align: left;
+			  }
+		  }
+		  
 		// Metadata elements
 		h4,
 		h5,

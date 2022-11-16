@@ -5,7 +5,7 @@
 
 	import { Footer, Navbar } from "$layout";
 	import { links, type NavbarItem } from "$data/links";
-	import { docs } from "$data/docs";
+	import { projects } from "$data/projects";
 
 	import "fluent-svelte/theme.css";
 
@@ -17,7 +17,7 @@
 	import Page from "./+page.svelte";
 	// import PaintBrush from "@fluentui/svg-icons/icons/paint_brush_24_regular.svg?raw";
 
-	const { github, discord } = links;
+	const { github } = links;
 	export const prerender = true;
 
 	const navbarItems: NavbarItem[] = [
@@ -25,37 +25,22 @@
 			name: "Portfolio",
 			path: "/",
 			icon: Home
+		},
+		{
+			name: "Projects",
+			path: "/projects",
+			icon: Code
 		}
-		// {
-		// 	name: "Projects",
-		// 	path: "/projects",
-		// 	icon: Code
-		// }
-		// {
-		// 	name: "Docs",
-		// 	path: "/docs",
-		// 	sidebarTree: docs,
-		// 	icon: Book
-		// },
-		// {
-		// 	name: "Blog",
-		// 	path: "/blog",
-		// 	icon: News
-		// }
+
 	];
 
-	// const navbarButtons = [
-	// 	{
-	// 		label: "Discord",
-	// 		href: `https://discord.gg/${ discord }`,
-	// 		icon: Chat
-	// 	},
-	// 	{
-	// 		label: "GitHub",
-	// 		href: `https://github.com/${ github.owner }/${ github.repo }`,
-	// 		icon: Code
-	// 	}
-	// ];
+	const navbarButtons = [
+		{
+			label: "GitHub",
+			href: `https://github.com/${ github.owner }/`,
+			icon: Code
+		}
+	];
 
 	let theme: "light" | "dark" = "light";
 
@@ -76,8 +61,7 @@
 	<link rel="icon" type="image/svg" href={"/ui/icons/favicon.ico"} />
 </svelte:head>
 
-<Navbar items={navbarItems} />
-<!-- <Navbar buttons={navbarButtons} items={navbarItems} /> -->
+<Navbar buttons={navbarButtons} items={navbarItems} />
 <slot />
 <Footer />
 
