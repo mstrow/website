@@ -98,9 +98,9 @@
 
 			mask: url("/ui/hero-mask.png") bottom / cover no-repeat;
 
-			@media (prefers-color-scheme: light) {
+			//@media (prefers-color-scheme: light) {
 				opacity: 0.5;
-			}
+			//}
 
 			@media screen and (width < 1024px) {
 				inline-size: 100%;

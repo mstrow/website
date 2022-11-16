@@ -27,14 +27,14 @@
 			>
 		</picture>
 		<picture>
-			<source
+			<!-- <source
 				media="(prefers-color-scheme: dark)"
 				srcset="/screenshots/win11-dark.jpg"
 			>
 			<source
 				media="(prefers-color-scheme: light)"
 				srcset="/screenshots/win11-light.jpg"
-			>
+			> -->
 			<img
 				alt="Windows 11 wallpaper"
 				class="files-wallpaper"

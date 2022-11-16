@@ -93,10 +93,10 @@
 			background-color: var(--fds-control-fill-default);
 			border-block-start-color: var(--fds-control-stroke-secondary);
 
-			@media (prefers-color-scheme: light) {
+			//@media (prefers-color-scheme: light) {
 				border-block-start-color: var(--fds-control-fill-default);
 				border-block-end-color: var(--fds-control-fill-secondary);
-			}
+			//}
 		}
 
 		img {
