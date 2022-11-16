@@ -3,6 +3,7 @@
 	import { previewFiles } from "$data/features";
 	import { projects } from "$data/projects";
 	import { each } from "svelte/internal";
+	import { Button} from "fluent-svelte";
 
 	let currentPreviewFile = 0;
 </script>
@@ -58,9 +59,11 @@
 							<ul>
 								{#each file.projects as project}
 									<li>
-										<a href="/projects{project.link}">
+										<Button
+										variant="hyperlink"
+										href="/projects{project.link}">
 											{project.name}
-										</a>
+										</Button>
 									</li>
 								{/each}
 							</ul>

@@ -81,7 +81,7 @@
 
 <section class="docs">
 	<aside class="sidebar">
-		<div class="search">
+		<!-- <div class="search">
 			<div
 				class="autosuggest-wrapper"
 				use:clickOutside={() => (autoSuggestVisible = false)}
@@ -102,7 +102,7 @@
 								keepfocus: true
 							});
 					}}
-					placeholder="Search Documentation"
+					placeholder="Search Projects"
 					type="search"
 				/>
 				{#if autoSuggestVisible}
@@ -120,7 +120,7 @@
 				{/if}
 			</div>
 			<hr role="separator">
-		</div>
+		</div> -->
 		<TreeView tree={projects} />
 	</aside>
 	<article class="page scroller">
@@ -171,7 +171,7 @@
 						{$page.url.pathname.split("/").join(" / ").substring(2)}
 						{$page.url.pathname === "/projects" ? " / overview" : ""}
 					</span>
-					<div class="header-right">
+					<!-- <div class="header-right">
 						<Button variant="hyperlink"
 						        href="https://github.com/{links.github.owner}/edit/main/src/routes/docs{currentPage.path ||
 								'/index'}.md"
@@ -179,7 +179,7 @@
 						>
 							Edit this page
 						</Button>
-					</div>
+					</div> -->
 				</header>
 				<slot />
 			</div>
