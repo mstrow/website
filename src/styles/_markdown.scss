@@ -50,9 +50,13 @@
 		}
 	}
 
-	img {
+	img, video{
 		max-inline-size: 100%;
 		block-size: auto;
+		border-radius: var(--fds-overlay-corner-radius);
+		border: 3px solid var(--fds-card-stroke-default);
+	}
+	embed{
 		border-radius: var(--fds-overlay-corner-radius);
 		border: 3px solid var(--fds-card-stroke-default);
 	}

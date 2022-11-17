@@ -33,6 +33,14 @@ export const projects: (DocsPage | DocsCategory)[] = [
 				path: "/degree/library-manager"
 			},
 			{
+				name: "Project Report",
+				path: "/degree/project-report"
+			},
+			{
+				name: "AWS Distributed Hosting Platform",
+				path: "/degree/AWS-report"
+			},
+			{
 				name: "Python QT Data Analysis Tool",
 				path: "/degree/pythonqtdataanalysis"
 			},
