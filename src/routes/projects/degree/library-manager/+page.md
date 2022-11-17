@@ -3,7 +3,7 @@ This is a full-stack app built using C#. It has two front-end clients; one built
 
 GituHub repo: https://github.com/mstrow/LibraryManager
 ## WinUI APP
-![libraryman](https://user-images.githubusercontent.com/38768048/201034781-41d0e126-9d12-4976-ba84-b6f1cc6ade09.png)
+![libraryman](/docs-resources/libraryman.png)
 
 ## UML
 ![UML](https://user-images.githubusercontent.com/38768048/201036620-90089e24-31e8-41c7-8dd5-44cf8103d0f9.svg)

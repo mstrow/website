@@ -6,4 +6,4 @@ I followed this excellent guide for building on using C by Peter Shirley: https:
 Github repo: https://github.com/mstrow/RTinaWeekend
 
 
-![alt text](/screenshots/img_trans.webp)
+![alt text](/docs-resources/tracer.webp)
